@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<template>
+<template class="flex flex-col">
   <SiteHeader />
   <RouterView />  
   <SiteFooter />

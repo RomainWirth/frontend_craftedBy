@@ -36,6 +36,7 @@
   --section-gap: 160px;
 }
 
+/* DARK THEME */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
@@ -59,7 +60,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   color: var(--color-text);
   background: var(--color-background);
   transition:

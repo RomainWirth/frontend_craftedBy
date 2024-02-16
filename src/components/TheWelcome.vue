@@ -1,19 +1,17 @@
 <script>
-import SearchBar from './ui/SearchBar.vue';
+import ItemSmallCard from './ui/ItemSmallCard.vue'
 
 export default {
   components: {
-    SearchBar,
+    ItemSmallCard,
   }
 }
 </script>
 
 <template>
   <div>
-    <SearchBar />
-  </div>
-  <div>
     <p>items to display</p>
+    <ItemSmallCard />
   </div>
   <div>
     <p>categories buttons</p>
