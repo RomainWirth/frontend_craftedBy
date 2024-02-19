@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <header>
+  <header class="sm:fixed b-0 z-10">
     <nav>
       <ul>
         <li><RouterLink to="/">Home</RouterLink></li>
@@ -13,4 +13,7 @@
 </template>
 
 <style>
+header {
+  background-color: red;
+}
 </style>

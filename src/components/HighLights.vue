@@ -10,10 +10,8 @@ export default {
 
 <template>
   <div>
-    <p>items to display</p>
+    <h4>Highlights</h4>
     <ItemSmallCard />
-  </div>
-  <div>
-    <p>categories buttons</p>
+    <ItemSmallCard />
   </div>
 </template>

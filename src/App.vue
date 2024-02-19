@@ -12,7 +12,7 @@ export default {
 
 <template class="flex flex-col">
   <SiteHeader />
-  <RouterView />  
+  <RouterView />
   <SiteFooter />
 </template>
 

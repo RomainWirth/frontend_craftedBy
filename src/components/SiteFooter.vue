@@ -8,4 +8,8 @@
   </footer>
 </template>
 
-<style></style>
+<style>
+footer {
+  background-color: blue;
+}
+</style>

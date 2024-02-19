@@ -1,20 +1,18 @@
 <script>
-import TheWelcome from '../components/TheWelcome.vue'
-import SearchBar from '../components/ui/SearchBar.vue'
+import HighLights from '../components/HighLights.vue'
+import CategoriesList from '../components/CategoriesList.vue';
 
 export default {
   components: {
-    SearchBar,
-    TheWelcome,
+    HighLights,
+    CategoriesList,
   }
 }
 </script>
 
 <template>
   <main>
-    <div class="flex w-full">
-      <SearchBar />
-    </div>
-    <TheWelcome />
+    <HighLights />
+    <CategoriesList />
   </main>
 </template>
