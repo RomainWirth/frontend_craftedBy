@@ -1,5 +1,8 @@
 <template>
   <div class="catalog">
-    <p>Catalogue</p>
+    <h1>Catalogue</h1>
+    <div>
+      
+    </div>
   </div>
 </template>
