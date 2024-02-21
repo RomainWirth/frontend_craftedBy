@@ -25,21 +25,21 @@ export default {
         <i-ph-moon class="swap-off fill-current w-6 h-6" />
       </label>
       <RouterLink to="/">
-          <img src="../assets/images/logo_base.png" alt="" class="w-[48px] h-[48px]">
+          <img src="../assets/images/logo_base.png" alt="" class="w-12 h-12">
       </RouterLink>
       <RouterLink to="/profile">
-        <div>
+        <div class="text-4xl w-12 h-12 flex justify-center items-center rounded-[50%]">
           <i-ph-user-circle />
         </div>
       </RouterLink>
       <RouterLink to="/cart">
-        <div>
+        <div class="text-2xl w-12 h-12 flex justify-center items-center">
           <i-ph-shopping-cart />
         </div>
       </RouterLink>
       <nav>
         <details class="dropdown dropdown-top dropdown-end">
-          <summary role="button" class="btn" @click="toggleEvent">
+          <summary role="button" class="text-4xl w-12 h-12 flex justify-center items-center" @click="toggleEvent">
               <!-- hamburger icon -->
               <i-ph-list v-if="isBurgerIcon"/>
               <!-- close icon -->
@@ -58,6 +58,10 @@ export default {
 </template>
 
 <style>
+summary {
+  /* Hide the list arrow */
+  list-style: none;
+}
 header {
   background-color: red;
 }

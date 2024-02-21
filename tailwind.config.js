@@ -19,24 +19,41 @@ const config = {
       height: {
         '80dvh': '80dvh'
       },
-      colors: {},
+      colors: {
+        primary: 'var(--primary)',
+        'primary-light': 'var(--primary-light)',
+        'primary-dark': 'var(--primary-dark)',
+        secondary: 'var(--secondary)',
+        tertiary: 'var(--tertiary)',
+        'tertiary-light': 'var(--tertiary-light)',
+        dark: 'var(--dark)',
+        'grey-light': 'var(--grey-light)',
+        'grey-medium-light': 'var(--grey-medium-light)',
+        grey: 'var(--grey)',
+        'grey-medium-dark': 'var(--grey-medium-dark)',
+        'grey-dark': 'var(--grey-dark)',
+        white: 'var(--white)',
+        black: 'var(--black)'
+      },
       fontFamily: {}
     }
   },
   daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: '#F24141',
-          'primary-light': '#FEF2F2',
-          'primary-dark': '#811B1B',
-          secondary: '#F2B1A2',
-          tertiary: '#8EB1CC',
-          'tertiary-light': '#F4F8FA',
-          dark: '12233F'
-        }
-      }
-    ]
+    // themes: [
+    //   {
+    //     light: {
+    //       ...require('daisyui/src/theming/themes')['light'],
+    //       primary: 'primary',
+    //       secondary: 'secondary',
+    //       tertiary: 'tertiary'
+    //     }
+    //   },
+    //   {
+    //     dark: {
+    //       ...require('daisyui/src/theming/themes')['dark']
+    //     }
+    //   }
+    // ]
   },
   plugins: [daisyui]
 }
