@@ -1,43 +1,39 @@
 <script>
 import ItemSmallCard from './ui/ItemSmallCard.vue'
-// import { onMounted, computed } from "vue";
-
 import { useItemStore } from "../stores/ItemStore";
-// const items = computed(() => {
-//   return itemStore.items;
-// })
-
-// onMounted(() => {
-//   itemStore.fetchItems();
-// })
 
 export default {
   name: "HighLights",
   setup() {
     const itemStore = useItemStore();
-    itemStore.fetchItems()
-    const items = itemStore.items;
-    console.log(items);
-    return items;
+    return {itemStore};
   },
   components: {
     ItemSmallCard,
   },
+  async mounted() {
+    await this.itemStore.fetchItems();
+    console.log(this.itemStore.fetchItems())
+  }
 }
 </script>
 
 <template>
-  <div>
+  <div class="w-[90%] flex flex-col items-center mx-auto">
     <h4>Highlights</h4>
-    <div>
+    <div class="flex flex-col m-auto w-full">
       <ItemSmallCard 
-        v-for="item in items" 
-        :key="item.title"
-        title="item.title"
-        imageUrl="item.image"
-        price="item.price"
-        category="item.category"
-        description="item.description"
+        v-for="item in itemStore.items"
+        :key="item.id"
+        :title="item.title"
+        :imageUrl="item.image"
+        :price="item.price"
+        :category="item.category"
+        cardContentClass="flex items-center"
+        imageClass="w-1/2"
+        :imageAlt="item.title"
+        contentClass="w-1/2 h-full flex flex-col justify-evenly items-center"
+        contentPriceClass="self-end"
       />
     </div>
   </div>

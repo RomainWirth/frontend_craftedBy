@@ -1,11 +1,7 @@
 import axios from 'axios'
 
-const fetchItems = async () => {
-  try {
-    await axios.get('https://fakestoreapi.com/products').then((response) => response.data)
-  } catch (error) {
-    console.error('error', error)
-  }
-}
+const api = axios.create({
+  baseURL: import.meta.env.VITE_BASE_API_URL // https://fakestoreapi.com
+})
 
-export default fetchItems()
+export default api

@@ -23,6 +23,21 @@ const config = {
       fontFamily: {}
     }
   },
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: '#F24141',
+          'primary-light': '#FEF2F2',
+          'primary-dark': '#811B1B',
+          secondary: '#F2B1A2',
+          tertiary: '#8EB1CC',
+          'tertiary-light': '#F4F8FA',
+          dark: '12233F'
+        }
+      }
+    ]
+  },
   plugins: [daisyui]
 }
 
