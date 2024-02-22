@@ -17,7 +17,7 @@ export default {
   async mounted() {
     const id = this.$route.params.id;
     await this.itemStore.fetchOneItem(id);
-    console.log(this.itemStore.fetchOneItem(id));
+    // console.log(this.itemStore.fetchOneItem(id));
   },
 }
 
@@ -25,7 +25,7 @@ export default {
 
 <template>
   <div class="item flex flex-col items-center">
-    <RouterLink to="/">
+    <RouterLink :to="`/catalog/${itemStore.getItem.category}`">
       <CategoryButton :category="itemStore.getItem.category"/>
     </RouterLink>
     <ItemCard :item="itemStore.getItem" />

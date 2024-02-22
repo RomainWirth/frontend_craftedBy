@@ -40,9 +40,9 @@ export const useItemStore = defineStore('ItemStore', {
     },
     async fetchItemsInCategory(category) {
       try {
-        const response = await api.get('/products/categories' + category)
+        const response = await api.get('/products/category/' + category)
         console.log(response.data)
-        this.item = response.data
+        this.items = response.data
       } catch (error) {
         alert(error)
         console.error('error lors de la récupération des produits', error)
@@ -55,6 +55,9 @@ export const useItemStore = defineStore('ItemStore', {
     },
     getItem(state) {
       return state.item
+    },
+    getCategories(state) {
+      return state.categories
     }
   }
 })

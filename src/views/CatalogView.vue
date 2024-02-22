@@ -1,8 +1,41 @@
+<script>
+import { useItemStore } from '@/stores/ItemStore';
+import CategoryButton from '@/components/ui/CategoryButton.vue';
+import ItemSmallCard from '@/components/ui/ItemSmallCard.vue';
+
+export default {
+  name: 'CatalogView',
+  setup() {
+    const itemStore = useItemStore();
+    console.log(itemStore);
+    return {itemStore};
+  },
+  component: {
+    CategoryButton,
+    ItemSmallCard,
+  },
+  async mounted() {
+    const category = this.$route.params.category;
+    await this.itemStore.fetchItemsInCategory(category);
+  }
+}
+</script>
+
 <template>
-  <div class="catalog">
-    <h1>Catalogue</h1>
+  <div class="catalog flex flex-col items-center p-2">
     <div>
-      
+      <CategoryButton 
+        :category="this.$route.params.category"
+      />
+    </div>
+    <div class="m-2">
+      <RouterLink 
+        :to="`/current-item/${item.id}`" 
+        v-for="item in itemStore.items" 
+        :key="item.category"
+      >
+        <ItemSmallCard :item="item"/>
+      </RouterLink>
     </div>
   </div>
 </template>

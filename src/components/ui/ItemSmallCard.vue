@@ -2,69 +2,21 @@
 export default {
   name: 'ItemSmallCard',
   props: {
-    imageUrl: {
-      type: String,
+    item: {
+      type: Object,
       required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    owner: {
-      type: String,
-      required: false,
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
-    category: {
-      type: String,
-      required: true,
-    },
-    cardContentClass: {
-      type: String,
-      required: true,
-    },
-    imageContainerClass: {
-      type: String,
-      required: true,
-    },
-    imageClass: {
-      type: String,
-      required: true,
-    },
-    imageAlt: {
-      type: String,
-      required: true,
-    },
-    contentClass: {
-      type: String,
-      required: true,
-    },
-    cotentTitleClass: {
-      type: String,
-      required: false,
-    },
-    cotentOwnerClass: {
-      type: String,
-      required: false,
-    },
-    contentPriceClass: {
-      type: String,
-      required: false,
-    },
+    }
   }
 }
 </script>
 
 <template>
-  <div :class="cardContentClass">
-    <img :class="imageClass" :src="imageUrl" :alt="imageAlt">
-    <div :class="contentClass">
-      <h4 :class="contentTitleClass">{{ title }}</h4>
-      <p :class="contentOwnerClass">{{ owner }}</p>
-      <p :class="contentPriceClass">{{ price }}</p>
+  <div class="flex items-center">
+    <img class="w-1/2" :src="item.image" :alt="item.title">
+    <div class="w-1/2 h-full flex flex-col justify-evenly items-center">
+      <h4>{{ item.title }}</h4>
+      <p>{{ item.category }}</p>
+      <p class="self-end">{{ item.price }}</p>
     </div>
   </div>
 </template>
