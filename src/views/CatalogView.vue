@@ -32,7 +32,7 @@ export default {
       <RouterLink 
         :to="`/current-item/${item.id}`" 
         v-for="item in itemStore.items" 
-        :key="item.category"
+        :key="item.id"
       >
         <ItemSmallCard :item="item"/>
       </RouterLink>

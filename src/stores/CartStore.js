@@ -1,18 +1,30 @@
 import { defineStore } from 'pinia'
 
-export const useMarketStore = defineStore('market', {
+export const useCartStore = defineStore('CartStore', {
   state: () => ({
-    items: [],
-    cart: []
+    items: JSON.parse(localStorage.getItem('items')) || []
   }),
-  getters: {
-    discounted: (state) => {
-      return state.items.filter((item) => item.discount)
+  actions: {
+    persistToLocalStorage() {
+      localStorage.setItem('items', JSON.stringify(this.items))
+      console.log('saved to local Storage')
+    },
+    addToCart(item) {
+      this.items.push(item)
+      this.persistToLocalStorage()
+    },
+    removeFromCart(item) {
+      const index = this.items.indexOf(item)
+      this.items.splice(index, 1)
+      this.persistToLocalStorage()
     }
   },
-  actions: {
-    addToCart(item) {
-      this.cart.push(item)
+  getters: {
+    getTotalPrice(state) {
+      return state.items.reduce((accumulator, current) => {
+        accumulator += current.price
+        return accumulator
+      }, 0)
     }
   }
 })
