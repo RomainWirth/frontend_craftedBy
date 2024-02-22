@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import CartView from '../views/CartView.vue'
 import CatalogView from '../views/CatalogView.vue'
+import ItemView from '../views/ItemView.vue'
 import ArtisanView from '../views/ArtisanView.vue'
 import AboutView from '../views/AboutView.vue'
 
@@ -29,6 +30,11 @@ const router = createRouter({
       path: '/catalog',
       name: 'catalog',
       component: CatalogView
+    },
+    {
+      path: '/current-item/:id',
+      name: 'item',
+      component: ItemView
     },
     {
       path: '/artisan',

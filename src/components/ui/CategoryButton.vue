@@ -1,10 +1,16 @@
 <script>
-
+export default {
+  props: {
+    category: {
+      type: String,
+      required: true,
+    }
+  }
+}
 </script>
 
 <template>
-  <div class="flex">
-    <div>Pict.</div>
-    <h5>Category Name</h5>
+  <div class="flex w-full bg-tertiary-light">
+    <h5>{{ category }}</h5>
   </div>
 </template>
