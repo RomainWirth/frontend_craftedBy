@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: 'SiteHeader',
   data() {
     return {
       isBurgerIcon: true

@@ -9,6 +9,7 @@ export const useCartStore = defineStore('CartStore', {
       localStorage.setItem('items', JSON.stringify(this.items))
       console.log('saved to local Storage')
     },
+    //ajouter la logique de compte de quantité d'un même élément dans le panier
     addToCart(item) {
       this.items.push(item)
       this.persistToLocalStorage()

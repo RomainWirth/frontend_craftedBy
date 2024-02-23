@@ -3,7 +3,7 @@ import ItemSmallCard from './ui/ItemSmallCard.vue';
 import { useItemStore } from "../stores/ItemStore";
 
 export default {
-  name: "HighLights",
+  name: 'HighLights',
   setup() {
     const itemStore = useItemStore();
     return {itemStore};

@@ -1,17 +1,13 @@
 <script>
-import { useItemStore } from '@/stores/ItemStore';
 import CategoryButton from './ui/CategoryButton.vue';
 
 export default {
-  setup() {
-    const itemStore = useItemStore();
-    return {itemStore};
-  },
+  name: 'CategoriesList',
   components: {
     CategoryButton,
   },
   async mounted() {
-    await this.itemStore.fetchCategories();
+    await this.$Item.fetchCategories();
   }
 }
 </script>
@@ -23,7 +19,7 @@ export default {
     <div>
       <RouterLink 
         :to="`/catalog/${category}`"
-        v-for="category in itemStore.getCategories"
+        v-for="category in $Item.getCategories"
         :key="category.id"
       >
         <CategoryButton 

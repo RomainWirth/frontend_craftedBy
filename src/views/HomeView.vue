@@ -4,6 +4,7 @@ import CategoriesList from '../components/CategoriesList.vue';
 import ArtisansList from '../components/ArtisansList.vue';
 
 export default {
+  name: 'HomeView',
   components: {
     HighLights,
     CategoriesList,

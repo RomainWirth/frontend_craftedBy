@@ -1,11 +1,6 @@
 <script>
-import { useCartStore } from '@/stores/CartStore';
-
 export default {
-  setup() {
-    const cartStore = useCartStore();
-    return {cartStore}
-  },
+  name: 'ItemCard',
   props: {
     item: {
       type: Object,
@@ -33,7 +28,7 @@ export default {
       </div>
       <div class="flex justify-evenly">
         <p>{{ item.price }}</p>
-        <button @click="cartStore.addToCart(item)">Commander</button>
+        <button @click="$Cart.addToCart(item)">Commander</button>
       </div>
       <p>{{ item.description }}</p>
       <div class="flex">

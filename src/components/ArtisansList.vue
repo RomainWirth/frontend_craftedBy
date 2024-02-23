@@ -2,6 +2,7 @@
 import ArtisanSmallCard from './ui/ArtisanSmallCard.vue';
 
 export default {
+  name: 'ArtisansList',
   components: {
     ArtisanSmallCard,
   }
