@@ -5,23 +5,32 @@ export default {
     item: {
       type: Object,
       required: true,
-    },
-    quantity: {
-      type: Number,
-      required: false
     }
+  },
+  methods: {
+    displayedPrice() {
+      if(this.item.price === null) {
+        return "price unknown";
+      }
+      return this.item.price / 100;
+    },
+    // artisanName() {
+    //   if (!this.item.artisan.companyName) {
+    //     return "Anonymous Artisan";
+    //   }
+    //   return this.item.artisan.companyName
+    // }
   }
 }
 </script>
 
 <template>
-  <div class="flex items-center">
-    <img class="w-1/2" :src="item.image" :alt="item.title">
-    <div class="w-1/2 h-full flex flex-col justify-evenly items-center">
-      <h4>{{ item.title }}</h4>
-      <p class="self-start">{{ item.category }}</p>
-      <p class="self-end">p.u. : {{ item.price }} €</p>
-      <p v-if="quantity">quantité : {{ quantity }}</p>
+  <div class="relative m-2 flex flex-col items-start h-60 w-60 rounded-lg overflow-hidden shadow-lg">
+    <img class="w-full h-full" :src="item.imageUrl" :alt="item.name">
+    <div class="absolute bottom-0 flex flex-col items-center h-24 w-60 p-1 gap-1 bg-slate-700 bg-opacity-70 text-white">
+      <h4 class="self-start w-full truncate">{{ item.name }}</h4>
+      <!-- <p>{{ artisanName() }}</p> -->
+      <p class="self-end">p.u. : {{ displayedPrice() }} €</p>
     </div>
   </div>
 </template>

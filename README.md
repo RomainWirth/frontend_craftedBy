@@ -33,3 +33,13 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Environement
+
+Add `.env` file to set environment variables :
+
+```
+VITE_BASE_API_URL = 'http://localhost:8000/api/'
+```
+
+or URI for backend API.

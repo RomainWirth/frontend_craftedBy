@@ -18,9 +18,9 @@ export default {
 
 <template>
   <div class="item flex flex-col items-center">
-    <RouterLink :to="`/catalog/${$Item.getItem.category}`">
+    <!-- <RouterLink :to="`/catalog/${$Item.getItem.category}`">
       <CategoryButton :category="$Item.getItem.category"/>
-    </RouterLink>
+    </RouterLink> -->
     <ItemCard :item="$Item.getItem" />
   </div>
 </template>

@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex w-full bg-tertiary-light">
+  <div class="flex flex-col items-center justify-center w-full h-full bg-tertiary-light rounded-lg text-center">
     <h5>{{ category }}</h5>
   </div>
 </template>

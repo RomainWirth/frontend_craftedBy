@@ -13,17 +13,18 @@ export default {
 </script>
 
 <template>
-  <div class="bg-green-500">
-    <h4>Shop by Category</h4>
+  <div class="w-full flex flex-col items-center rounded-t-xl overflow-hidden mt-2">
+    <h4 class="bg-secondary w-full py-1 text-center">Our categories</h4>
     <!-- ADD v-for -->
-    <div>
+    <div class="grid grid-cols-1 m-auto py-2 gap-2 overflow-y-scroll h-[250px] w-full max-w-[1024px] sm:grid-cols-3 sm:h-full sm:w-1/2"> 
       <RouterLink 
         :to="`/catalog/${category}`"
         v-for="category in $Item.getCategories"
         :key="category.id"
+        class="block w-full my-2 py-2 bg-tertiary-light rounded-lg shadow-lg sm:w-full sm:h-24"
       >
         <CategoryButton 
-          :category="category"
+          :category="category.name"
         />
       </RouterLink>
     </div>

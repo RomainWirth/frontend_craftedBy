@@ -18,7 +18,7 @@ export default {
   <header class="fixed bottom-0 z-10 w-full flex justify-center bg-dark">
     <nav class="w-[320px] flex justify-evenly p-2">
       <RouterLink to="/">
-          <img src="../assets/images/logo_base.png" alt="" class="w-12 h-12">
+          <img src="../assets/images/crafted_by_logo.png" alt="" class="w-12 h-12">
       </RouterLink>
       <RouterLink to="/profile">
         <div class="w-12 h-12 flex justify-center items-center rounded-[50%] bg-tertiary-light">

@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <main>
+  <main class="flex flex-col items-center p-1 gap-2">
     <HighLights />
     <CategoriesList />
     <ArtisansList />
