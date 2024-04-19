@@ -18,10 +18,10 @@ export default {
     <!-- ADD v-for -->
     <div class="grid grid-cols-1 m-auto py-2 gap-2 overflow-y-scroll h-[250px] w-full max-w-[1024px] sm:grid-cols-3 sm:h-full sm:w-1/2"> 
       <RouterLink 
-        :to="`/catalog/${category}`"
-        v-for="category in $Item.getCategories"
+        v-for="category in $Item.categories"
+        :to="`/catalog/${category.id}`"
         :key="category.id"
-        class="block w-full my-2 py-2 bg-tertiary-light rounded-lg shadow-lg sm:w-full sm:h-24"
+        class="block w-full my-2 py-2 bg-tertiary-light rounded-lg shadow-lg sm:w-full sm:h-24 hover:bg-primary hover:text-white"
       >
         <CategoryButton 
           :category="category.name"

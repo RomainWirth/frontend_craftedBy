@@ -1,19 +1,14 @@
 <script>
-import ItemSmallCard from './ui/ItemSmallCard.vue';
-import { useItemStore } from "../stores/ItemStore";
+import ItemSmallCard from '@/components/ui/ItemSmallCard.vue';
 
 export default {
   name: 'HighLights',
-  setup() {
-    const itemStore = useItemStore();
-    return {itemStore};
-  },
   components: {
     ItemSmallCard,
   },
   async mounted() {
-    await this.itemStore.fetchItems();
-    console.log(this.itemStore.fetchItems());
+    await this.$Item.fetchItems();
+    console.log(this.$Item.fetchItems());
   }
 }
 </script>
@@ -23,7 +18,7 @@ export default {
     <h4 class="w-full py-1 text-center bg-secondary">Highlights</h4>
     <div class="flex items-center m-auto w-full h-64 overflow-x-scroll">
       <RouterLink 
-        v-for="item in itemStore.items" 
+        v-for="item in $Item.items" 
         :to="`/current-item/${item.id}`" 
         :key="item.id"
         class="block h-full"

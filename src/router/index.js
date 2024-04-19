@@ -19,7 +19,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/catalog/:category',
+      path: '/catalog/:categoryId',
       name: 'catalog',
       component: CatalogView
     },
@@ -29,7 +29,7 @@ const router = createRouter({
       component: ItemView
     },
     {
-      path: '/artisan',
+      path: '/current-artisan/:id',
       name: 'artisan',
       component: ArtisanView
     },

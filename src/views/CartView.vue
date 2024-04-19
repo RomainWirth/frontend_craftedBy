@@ -9,23 +9,35 @@ export default {
   computed: {
     totalItems() {
       const items = this.$Cart.items;
+      console.log(items);
       return items.length();
-    }
+    },
   }
 }
 </script>
 
 <template>
-  <div class="cart m-1 flex flex-col items-center">
+  <div class="m-1 flex flex-col items-center min-h-svh">
     <h2>Mon panier</h2>
     <div class="flex flex-col justify-between items-center">
       <!-- <p>Nombre d'articles(s) : {{ totalItems }}</p> -->
       <p>Prix total : {{ $Cart.getTotalPrice }} €</p>
     </div>
     <div>
-      <RouterLink to="/login" custom v-slot="{navigate}">
-        <button @click="navigate" role="link">Valider mon Panier</button>
-      </RouterLink>
+      <template v-if="$User.token">
+        <div>
+          <RouterLink to="/" custom v-slot="{navigate}">
+            <button @click="navigate" role="link">Payer</button>
+          </RouterLink>
+        </div>
+      </template>
+      <template v-else>
+        <div>
+          <RouterLink to="/login" custom v-slot="{navigate}">
+            <button @click="navigate" role="link">Se connecter pour payer</button>
+          </RouterLink>
+        </div>
+      </template>
     </div>
     <div 
       v-for="item in $Cart.items"

@@ -5,7 +5,8 @@ export const useItemStore = defineStore('ItemStore', {
   state: () => ({
     items: [],
     item: {},
-    categories: []
+    categories: [],
+    category: {}
   }),
   actions: {
     async fetchItems() {
@@ -38,26 +39,15 @@ export const useItemStore = defineStore('ItemStore', {
         console.error('erreur lors de la récupération des produits', error)
       }
     },
-    async fetchItemsInCategory(category) {
+    async fetchItemsInCategory(categoryId) {
       try {
-        const response = await api.get('/categories/' + category)
+        const response = await api.get('/items/category/' + categoryId)
         console.log(response.data)
         this.items = response.data
       } catch (error) {
         alert(error)
         console.error('erreur lors de la récupération des produits', error)
       }
-    }
-  },
-  getters: {
-    getItems(state) {
-      return state.items
-    },
-    getItem(state) {
-      return state.item
-    },
-    getCategories(state) {
-      return state.categories
     }
   }
 })

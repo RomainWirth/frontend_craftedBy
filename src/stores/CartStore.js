@@ -23,7 +23,7 @@ export const useCartStore = defineStore('CartStore', {
   getters: {
     getTotalPrice(state) {
       return state.items.reduce((accumulator, current) => {
-        accumulator += current.price
+        accumulator += current.price / 100
         return accumulator
       }, 0)
     }

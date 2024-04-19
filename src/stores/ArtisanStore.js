@@ -5,7 +5,9 @@ export const useArtisanStore = defineStore('ArtisanStore', {
   state: () => ({
     artisans: [],
     artisan: {},
-    specialties: []
+    artisanItems: [],
+    specialties: [],
+    artisanUser: {}
   }),
   actions: {
     async fetchArtisans() {
@@ -27,6 +29,34 @@ export const useArtisanStore = defineStore('ArtisanStore', {
         alert(error)
         console.error("erreur lors de la récupération de l'artisan", error)
       }
+    },
+    async fetchArtisanItem(id) {
+      try {
+        const response = await api.get('/items/artisan/' + id)
+        console.log(response.data)
+        this.artisanItems = response.data
+      } catch (error) {
+        alert(error)
+        console.error('No items for this artisan')
+      }
+    }
+  },
+  getters: {
+    getArtisans: (state) => {
+      console.log(state.artisans)
+      return state.artisans
+    },
+    getArtisan: (state) => {
+      console.log(state.artisan)
+      return state.artisan
+    },
+    getArtisanItems: (state) => {
+      console.log(state.artisanItems)
+      return state.artisanItems
+    },
+    getArtisanUser: (state) => {
+      console.log(state.artisanUser)
+      return state.artisanUser
     }
   }
 })

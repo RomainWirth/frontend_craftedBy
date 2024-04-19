@@ -1,7 +1,7 @@
 <script>
-import HighLights from '../components/HighLights.vue'
-import CategoriesList from '../components/CategoriesList.vue';
-import ArtisansList from '../components/ArtisansList.vue';
+import HighLights from '@/components/HighLights.vue'
+import CategoriesList from '@/components/CategoriesList.vue';
+import ArtisansList from '@/components/ArtisansList.vue';
 
 export default {
   name: 'HomeView',

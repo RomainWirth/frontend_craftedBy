@@ -7,19 +7,13 @@ export default {
       required: true,
     }
   },
-  methods: {
+  computed: {
     displayedPrice() {
       if(this.item.price === null) {
         return "price unknown";
       }
       return this.item.price / 100;
-    },
-    // artisanName() {
-    //   if (!this.item.artisan.companyName) {
-    //     return "Anonymous Artisan";
-    //   }
-    //   return this.item.artisan.companyName
-    // }
+    }
   }
 }
 </script>
@@ -29,8 +23,8 @@ export default {
     <img class="w-full h-full" :src="item.imageUrl" :alt="item.name">
     <div class="absolute bottom-0 flex flex-col items-center h-24 w-60 p-1 gap-1 bg-slate-700 bg-opacity-70 text-white">
       <h4 class="self-start w-full truncate">{{ item.name }}</h4>
-      <!-- <p>{{ artisanName() }}</p> -->
-      <p class="self-end">p.u. : {{ displayedPrice() }} €</p>
+      <p>{{ item.artisan?.companyName }}</p>
+      <p class="self-end">p.u. : {{ displayedPrice }} €</p>
     </div>
   </div>
 </template>

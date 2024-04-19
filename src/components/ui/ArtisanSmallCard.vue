@@ -7,13 +7,7 @@ export default {
       required: true,
     }
   },
-  methods: {
-    companyName() {
-      if(!this.artisan.companyName) {
-        return null
-      }
-      return this.artisan.companyName;
-    },
+  computed: {
     specialty() {
       if(!this.artisan.specialty) {
         return 'Aucune spécialité à afficher'
@@ -25,9 +19,9 @@ export default {
 </script>
 
 <template>
-  <div class="h-full w-full flex flex-col items-center">
+  <div class="size-auto p-2 flex flex-col items-center bg-tertiary rounded-lg hover:bg-dark hover:text-white">
     <h4>{{ artisan.user.firstname }} {{artisan.user.lastname}}</h4>
-    <h5>{{ companyName() }}</h5>
+    <h5>{{ artisan.companyName }}</h5>
     <div v-for="specialty in artisan.specialty" :key="specialty.id" class="flex flex-col items-center">
       <p>spécialité : {{ specialty.name ? specialty.name : 'pas de spécialité' }}</p>
     </div>
