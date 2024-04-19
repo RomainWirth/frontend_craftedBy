@@ -4,7 +4,7 @@ export default {
   methods: {
     async submit() {
       await this.$User.login(this)
-    }
+    },
   }
 }
 </script>

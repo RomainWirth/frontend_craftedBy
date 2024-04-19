@@ -36,7 +36,17 @@ export const useUserStore = defineStore('UserStore', {
           router.push('/')
         }
       } catch (error) {
-        console.error('erreur lors du login : ', error)
+        // console.error('erreur lors du login : ', error)
+        this.errors = []
+        if (error.status === 403) {
+          this.errors.push('Utilisateur déjà connecté')
+        }
+        if (error.status === 404) {
+          this.errors.push('Utilisateur inconnu')
+        }
+        if (error.status === 401) {
+          this.errors.push('Mot de passe incorrect')
+        }
       }
     },
     async logout() {
