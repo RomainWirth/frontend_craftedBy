@@ -76,5 +76,8 @@ export default {
         <button type="submit" class="btn btn-primary btn-block mt-5">S'enregistrer</button>
       </form>
     </div>
+    <div class="flex flex-col items-center">
+      <p>En vous inscrivant, vous acceptez les conditions générales d'utilisation</p>
+    </div>
   </div>
 </template>

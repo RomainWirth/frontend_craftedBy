@@ -39,10 +39,18 @@ export const useUserStore = defineStore('UserStore', {
         console.error('erreur lors du login : ', error)
       }
     },
-    logout() {
-      this.token = localStorage.removeItem('token')
-      this.user = localStorage.removeItem('user')
-      router.push('/')
+    async logout() {
+      try {
+        const response = await api.post('/logout')
+        console.log(response)
+        if (response.status === 200) {
+          this.token = localStorage.removeItem('token')
+          this.user = localStorage.removeItem('user')
+          router.push('/')
+        }
+      } catch (error) {
+        console.error('Erreur lors du logout', error)
+      }
     }
   }
 })

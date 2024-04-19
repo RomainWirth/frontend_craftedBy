@@ -21,7 +21,7 @@ export default {
         v-for="category in $Item.categories"
         :to="`/catalog/${category.id}`"
         :key="category.id"
-        class="block w-full my-2 py-2 bg-tertiary-light rounded-lg shadow-lg sm:w-full sm:h-24 hover:bg-primary hover:text-white"
+        class="block w-full my-2 py-2 bg-tertiary-light rounded-lg shadow-lg border-dark border-2 sm:w-full sm:h-24 hover:bg-primary hover:text-white hover:border-white"
       >
         <CategoryButton 
           :category="category.name"

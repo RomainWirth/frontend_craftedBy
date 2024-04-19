@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-  <div class="size-auto p-2 flex flex-col items-center bg-tertiary rounded-lg hover:bg-dark hover:text-white">
+  <div class="size-auto p-2 flex flex-col items-center">
     <h4>{{ artisan.user.firstname }} {{artisan.user.lastname}}</h4>
     <h5>{{ artisan.companyName }}</h5>
     <div v-for="specialty in artisan.specialty" :key="specialty.id" class="flex flex-col items-center">

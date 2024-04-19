@@ -14,9 +14,9 @@ export default {
 </script>
 
 <template>
-  <main class="flex flex-col items-center p-1 gap-2">
+  <div class="flex flex-col items-center p-1 gap-2">
     <HighLights />
     <CategoriesList />
     <ArtisansList />
-  </main>
+  </div>
 </template>

@@ -15,7 +15,9 @@ export default {
 <template>
   <HeadBand />
   <SiteHeader />
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
   <SiteFooter />
 </template>
 

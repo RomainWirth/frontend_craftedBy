@@ -21,7 +21,7 @@ export default {
         v-for="artisan in $Artisan.artisans" 
         :to="`/current-artisan/${artisan.id}`" 
         :key="artisan.id"
-        class="block w-[304px]"
+        class="block w-[304px] bg-tertiary rounded-lg border-2 border-dark hover:bg-dark hover:text-white"
       >
         <ArtisanSmallCard :artisan="artisan"/>
       </RouterLink>
