@@ -25,6 +25,10 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 # Copiez les fichiers de l'application compilée depuis le premier conteneur dans le répertoire approprié de l'image NGINX
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
+# Script pour remplacer les variables d'environnement
+COPY ./substitute_env_var.sh /docker-entrypoint.d/substitute_env_var.sh
+RUN chmod +x /docker-entrypoint.d/substitute_env_var.sh
+
 # Exposez le port 80 pour que l'application soit accessible depuis l'extérieur du conteneur
 EXPOSE 80
 
